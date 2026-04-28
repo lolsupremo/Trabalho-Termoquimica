@@ -5,12 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exemplos - Gráfico do Marea</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .grafico-box {
+      margin-top: 24px;
+      border: 1px solid #fff;
+      border-radius: 24px;
+      background: #080808;
+      padding: 18px;
+      overflow: hidden;
+    }
+    
+    .grafico-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .grafico-svg text {
+      font-family: Arial, Helvetica, sans-serif;
+      fill: #fff;
+      font-weight: 900;
+    }
+    
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    
+    .card {
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 22px;
+      padding: 21px;
+    }
+    
+    @media (max-width: 768px) {
+      .grade {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   
 <header>
   <div class="topo">
-      <a href="../index.html" class="logo-texto-marea">
+   <a href="../index.html" class="logo-texto-marea">
       <img src="../imagens/logoLendaria.png" alt="Marea Tech" class="logo-img">
       Marea Tech SOLUTIONS
     </a>
@@ -39,45 +81,71 @@
       <strong>supera a capacidade de absorção</strong> do sistema de arrefecimento.
     </p>
 
-    <div class="grafico-box" style="margin-top:24px; border:1px solid #fff; border-radius:24px; background:#080808; padding:18px;">
-      <svg class="grafico-svg" viewBox="0 0 900 460" style="width:100%; height:auto;">
+    <div class="grafico-box">
+      <svg class="grafico-svg" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="setaExo" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
             <path d="M 0 0 L 12 6 L 0 12 Z" fill="#fb923c"></path>
           </marker>
+          <marker id="setaEixo" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M 0 0 L 12 6 L 0 12 Z" fill="#fff"></path>
+          </marker>
         </defs>
         
         <!-- Eixos -->
-        <line x1="80" y1="350" x2="80" y2="80" stroke="#fff" stroke-width="3" marker-end="url(#setaExo)"></line>
-        <line x1="80" y1="350" x2="830" y2="350" stroke="#fff" stroke-width="3" marker-end="url(#setaExo)"></line>
+        <line x1="80" y1="400" x2="80" y2="60" stroke="#fff" stroke-width="3" marker-end="url(#setaEixo)"></line>
+        <line x1="80" y1="400" x2="850" y2="400" stroke="#fff" stroke-width="3" marker-end="url(#setaEixo)"></line>
         
-        <text x="22" y="95" transform="rotate(-90 22 95)" fill="#fff" font-size="14" font-weight="900">Energia (kJ)</text>
-        <text x="650" y="440" fill="#fff" font-size="14" font-weight="900">Caminho da reação</text>
+        <text x="22" y="100" transform="rotate(-90 22 100)" fill="#fff" font-size="14">Energia (kJ)</text>
+        <text x="650" y="480" fill="#fff" font-size="14">Caminho da reação</text>
         
         <!-- Níveis de energia -->
         <line x1="145" y1="130" x2="765" y2="130" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="8 8"></line>
-        <line x1="145" y1="270" x2="765" y2="270" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="8 8"></line>
-        <line x1="145" y1="200" x2="765" y2="200" stroke="#fb923c" stroke-width="2" stroke-dasharray="8 8"></line>
+        <line x1="145" y1="300" x2="765" y2="300" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="8 8"></line>
+        <line x1="145" y1="220" x2="765" y2="220" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8 8"></line>
         
-        <!-- Curva de combustão -->
-        <path d="M 145 130 L 300 130 C 360 130, 370 80, 455 80 C 545 80, 540 270, 610 270 L 765 270" stroke="#fff" stroke-width="6" fill="none"></path>
+        <!-- Curva de combustão (exotérmica - desce) -->
+        <path d="M 145 130 L 300 130 C 360 130, 370 55, 455 55 C 545 55, 540 300, 610 300 L 765 300" 
+              stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"></path>
         
-        <!-- Seta do ΔH -->
-        <line x1="805" y1="130" x2="805" y2="270" stroke="#fb923c" stroke-width="5" marker-end="url(#setaExo)"></line>
+        <!-- Seta do ΔH (para baixo = negativo) -->
+        <line x1="805" y1="130" x2="805" y2="300" stroke="#fb923c" stroke-width="5" marker-end="url(#setaExo)"></line>
         
         <!-- Rótulos -->
-        <text x="120" y="120" fill="#fff" font-size="16" font-weight="900">Gasolina + O₂ (Reagentes)</text>
-        <text x="120" y="290" fill="#fff" font-size="16" font-weight="900">CO₂ + H₂O (Produtos)</text>
-        <text x="700" y="190" fill="#fb923c" font-size="20" font-weight="900">ΔH = -2800 kJ</text>
+        <rect x="115" y="15" width="280" height="40" rx="10" fill="#000" stroke="#fff" stroke-width="2"></rect>
+        <text x="125" y="42" fill="#fff" font-size="15">Gasolina + O₂ (Reagentes)</text>
+        
+        <rect x="535" y="380" width="270" height="40" rx="10" fill="#000" stroke="#fff" stroke-width="2"></rect>
+        <text x="545" y="407" fill="#fff" font-size="15">CO₂ + H₂O (Produtos)</text>
+        
+        <rect x="690" y="180" width="140" height="35" rx="10" fill="#000" stroke="#fb923c" stroke-width="2"></rect>
+        <text x="700" y="203" fill="#fb923c" font-size="16">ΔH = -2800 kJ</text>
         
         <!-- Linha do limite do radiador -->
-        <line x1="145" y1="200" x2="145" y2="200" stroke="#38bdf8" stroke-width="8"></line>
-        <text x="30" y="200" fill="#38bdf8" font-size="14" font-weight="900">Limite do Radiador</text>
-        <text x="30" y="220" fill="#38bdf8" font-size="12">(2200 kJ)</text>
+        <rect x="10" y="205" width="130" height="35" rx="10" fill="#000" stroke="#38bdf8" stroke-width="2"></rect>
+        <text x="18" y="228" fill="#38bdf8" font-size="12">Limite: 2200 kJ</text>
         
         <!-- Área de perigo -->
-        <rect x="145" y="130" width="620" height="70" fill="#fb923c" opacity="0.15" stroke="#fb923c" stroke-width="1" stroke-dasharray="5 5"></rect>
-        <text x="400" y="165" fill="#fb923c" font-size="14" font-weight="900" text-anchor="middle">⚠️ ZONA DE SUPERAQUE CIMENTO</text>
+        <rect x="145" y="130" width="620" height="90" fill="#fb923c" opacity="0.15" stroke="#fb923c" stroke-width="1" stroke-dasharray="5 5" rx="10"></rect>
+        <text x="455" y="170" fill="#fb923c" font-size="16" text-anchor="middle">⚠️ ZONA DE SUPERAQUE CIMENTO</text>
+        
+        <!-- Reagentes altos (muita energia) -->
+        <circle cx="222" cy="130" r="8" fill="#fff"></circle>
+        <!-- Pico de ativação -->
+        <circle cx="455" cy="55" r="8" fill="#fff"></circle>
+        <!-- Produtos baixos (pouca energia) -->
+        <circle cx="688" cy="300" r="8" fill="#fff"></circle>
+        
+        <!-- Animações -->
+        <circle cx="222" cy="130" r="12" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.6">
+          <animate attributeName="r" values="12;25" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="688" cy="300" r="12" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.6">
+          <animate attributeName="r" values="12;25" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
       </svg>
     </div>
 
@@ -98,7 +166,8 @@
       <p>
         <strong>Curiosidade:</strong> O Marea foi projetado na Itália com radiador pequeno para o clima europeu. 
         No Brasil, com temperaturas mais altas, o sistema não consegue absorver o calor extra do ambiente, 
-        piorando ainda mais o desequilíbrio termoquímico.
+        piorando ainda mais o desequilíbrio termoquímico. O calor acumulado pode chegar a <strong>600 kJ</strong>, 
+        suficiente para danificar juntas, anéis e até fundir o motor!
       </p>
     </div>
   </div>

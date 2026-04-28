@@ -15,11 +15,6 @@
       background: linear-gradient(135deg, #1a0000, #0a0a0a);
     }
     
-    .logo-carro {
-      font-size: clamp(3rem, 8vw, 6rem);
-      margin: 20px 0;
-    }
-    
     .logo-texto {
       font-size: clamp(2rem, 5vw, 4rem);
       font-weight: 900;
@@ -41,18 +36,18 @@
       margin: 20px 0;
       background: rgba(255,255,255,.05);
       display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 200px 1fr;
       gap: 24px;
-      align-items: center;
+      align-items: start;
     }
     
     .produto-svg {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 250px;
     }
     
     .produto-info h3 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 10px;
     }
     
@@ -60,10 +55,22 @@
       display: inline-block;
       background: #fff;
       color: #000;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 999px;
       font-weight: 900;
-      margin-top: 10px;
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+    
+    .reacao-quimica {
+      background: #000;
+      border: 1px solid #38bdf8;
+      border-radius: 14px;
+      padding: 15px;
+      margin: 15px 0;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 0.95rem;
     }
     
     @media (max-width: 768px) {
@@ -73,20 +80,9 @@
       }
       .produto-svg {
         margin: 0 auto;
+        width: 150px;
+        height: 200px;
       }
-    }
-    
-    .grade-produtos {
-      display: grid;
-      gap: 24px;
-      margin-top: 24px;
-    }
-    
-    .logo-svg {
-      width: 200px;
-      height: 150px;
-      margin: 0 auto;
-      display: block;
     }
   </style>
 </head>
@@ -94,7 +90,7 @@
   
 <header>
   <div class="topo">
-     <a href="../index.html" class="logo-texto-marea">
+      <a href="../index.html" class="logo-texto-marea">
       <img src="../imagens/logoLendaria.png" alt="Marea Tech" class="logo-img">
       Marea Tech SOLUTIONS
     </a>
@@ -118,26 +114,50 @@
     <span class="etiqueta">Produtos • página 1 de 3</span>
     
     <div class="logo-marea">
-      <!-- SVG do carro Marea para logo -->
-      <svg class="logo-svg" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Logo SVG da Marea Tech -->
+      <svg width="250" height="180" viewBox="0 0 250 180" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stop-color="#ff0000"/>
             <stop offset="100%" stop-color="#8b0000"/>
           </linearGradient>
+          <filter id="sombra">
+            <feDropShadow dx="3" dy="3" stdDeviation="2" flood-color="#000" flood-opacity="0.5"/>
+          </filter>
         </defs>
-        <!-- Carro estilizado -->
-        <rect x="20" y="60" width="160" height="40" rx="8" fill="url(#logoGrad)" stroke="#fff" stroke-width="2"/>
-        <rect x="55" y="35" width="70" height="30" rx="6" fill="url(#logoGrad)" stroke="#fff" stroke-width="2"/>
-        <!-- Janelas -->
-        <rect x="60" y="40" width="25" height="20" rx="3" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
-        <rect x="90" y="40" width="25" height="20" rx="3" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
-        <!-- Rodas -->
-        <circle cx="55" cy="105" r="12" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
-        <circle cx="145" cy="105" r="12" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
-        <!-- Chamas -->
-        <text x="100" y="145" text-anchor="middle" fill="#fb923c" font-size="20">🔥</text>
-        <animateTransform attributeName="transform" type="translate" values="0,0;2,2;0,0" dur="3s" repeatCount="indefinite"/>
+        
+        <!-- Carro Marea estilizado -->
+        <g filter="url(#sombra)">
+          <!-- Corpo -->
+          <rect x="30" y="70" width="190" height="45" rx="10" fill="url(#logoGrad)" stroke="#fff" stroke-width="2.5"/>
+          <!-- Teto -->
+          <rect x="70" y="40" width="80" height="35" rx="8" fill="url(#logoGrad)" stroke="#fff" stroke-width="2.5"/>
+          <!-- Para-brisa -->
+          <rect x="75" y="45" width="30" height="25" rx="4" fill="#bae6fd" stroke="#fff" stroke-width="1.5"/>
+          <!-- Janela traseira -->
+          <rect x="110" y="45" width="30" height="25" rx="4" fill="#bae6fd" stroke="#fff" stroke-width="1.5"/>
+          <!-- Rodas -->
+          <circle cx="65" cy="120" r="18" fill="#1a1a1a" stroke="#fff" stroke-width="2.5"/>
+          <circle cx="65" cy="120" r="9" fill="#333" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="185" cy="120" r="18" fill="#1a1a1a" stroke="#fff" stroke-width="2.5"/>
+          <circle cx="185" cy="120" r="9" fill="#333" stroke="#fff" stroke-width="1.5"/>
+          <!-- Faróis -->
+          <rect x="218" y="78" width="8" height="18" rx="3" fill="#fb923c" stroke="#fff" stroke-width="1.5"/>
+          <!-- Lanternas -->
+          <rect x="28" y="78" width="8" height="12" rx="3" fill="#ff0000" stroke="#fff" stroke-width="1.5"/>
+        </g>
+        
+        <!-- Ondas de calor -->
+        <path d="M 240 95 Q 250 85 245 75" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 248 105 Q 258 95 253 85" fill="none" stroke="#fb923c" stroke-width="2" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Texto -->
+        <text x="125" y="170" text-anchor="middle" fill="#fff" font-size="16" font-weight="900">MAREA TECH</text>
+        <text x="125" y="180" fill="#fb923c" font-size="8" text-anchor="middle">SOLUTIONS</text>
       </svg>
       
       <div class="logo-texto">Marea Tech</div>
@@ -155,60 +175,83 @@
       desenvolvemos <strong>três soluções químicas</strong> que atacam o problema em diferentes frentes.
     </p>
 
-    <div class="grade-produtos">
-      <!-- PRODUTO 1: MareaCool -->
-      <div class="produto-card">
-        <svg class="produto-svg" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="coolGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#38bdf8"/>
-              <stop offset="100%" stop-color="#075985"/>
-            </linearGradient>
-          </defs>
-          <rect width="150" height="150" fill="#0a0a0a" rx="15"/>
-          <rect x="45" y="30" width="60" height="100" rx="10" fill="url(#coolGrad)" stroke="#fff" stroke-width="2"/>
-          <rect x="55" y="10" width="40" height="25" rx="5" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
-          <text x="75" y="80" text-anchor="middle" fill="#fff" font-size="30">❄️</text>
-          <text x="30" y="60" fill="#bae6fd" font-size="12">❄</text>
-          <text x="115" y="90" fill="#bae6fd" font-size="10">❄</text>
-        </svg>
-        <div class="produto-info">
-          <h3>MareaCool™</h3>
-          <p><strong>Aditivo Endotérmico para Radiador</strong></p>
-          <p>Aumenta a capacidade de absorção de calor do líquido de arrefecimento. 
-          Contém nitrato de amônio (NH₄NO₃) que se dissolve endotermicamente, 
-          absorvendo até <strong>+600 kJ extras</strong> do motor.</p>
-          <p><small style="color: #38bdf8;">Reação: NH₄NO₃(s) → NH₄⁺(aq) + NO₃⁻(aq) — ΔH = +25.7 kJ/mol</small></p>
-          <span class="preco">R$ 89,90 • 1 Litro</span>
-        </div>
-      </div>
+    <!-- PRODUTO 1: MareaCool -->
+    <div class="produto-card">
+      <svg class="produto-svg" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="coolGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#38bdf8"/>
+            <stop offset="100%" stop-color="#075985"/>
+          </linearGradient>
+          <filter id="brilho">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <!-- Fundo -->
+        <rect width="200" height="250" fill="#0a0a0a" rx="20"/>
+        
+        <!-- Garrafa -->
+        <rect x="55" y="50" width="90" height="170" rx="18" fill="url(#coolGrad)" stroke="#fff" stroke-width="3"/>
+        <rect x="70" y="20" width="60" height="40" rx="8" fill="#bae6fd" stroke="#fff" stroke-width="2"/>
+        
+        <!-- Rótulo -->
+        <rect x="65" y="80" width="70" height="70" rx="10" fill="#000" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="100" y="108" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="900">MAREA</text>
+        <text x="100" y="128" text-anchor="middle" fill="#fff" font-size="11" font-weight="900">COOL™</text>
+        <text x="100" y="143" text-anchor="middle" fill="#bae6fd" font-size="8">ENDOTÉRMICO</text>
+        
+        <!-- Flocos de neve -->
+        <text x="35" y="90" fill="#bae6fd" font-size="16" opacity="0.8">❄</text>
+        <text x="155" y="110" fill="#bae6fd" font-size="12" opacity="0.6">❄</text>
+        <text x="40" y="160" fill="#bae6fd" font-size="14" opacity="0.7">❄</text>
+        <text x="150" y="170" fill="#bae6fd" font-size="10" opacity="0.5">❄</text>
+        
+        <!-- Ondas de frio -->
+        <path d="M 30 130 Q 45 120 55 130 Q 65 140 75 130" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 125 140 Q 140 130 155 140 Q 170 150 180 140" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2.5s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Texto inferior -->
+        <text x="100" y="235" text-anchor="middle" fill="#38bdf8" font-size="9" font-weight="900">1 LITRO</text>
+      </svg>
       
-      <!-- PRODUTO 2: ThermoBlock -->
-      <div class="produto-card">
-        <svg class="produto-svg" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <rect width="150" height="150" fill="#0a0a0a" rx="15"/>
-          <rect x="25" y="25" width="100" height="100" rx="15" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
-          <rect x="30" y="30" width="90" height="20" rx="8" fill="#075985" stroke="#38bdf8" stroke-width="1" filter="url(#glow)"/>
-          <text x="75" y="43" text-anchor="middle" fill="#fff" font-size="8" font-weight="900">THERMOBLOCK</text>
-          <text x="75" y="95" text-anchor="middle" fill="#38bdf8" font-size="40">🛡️</text>
-        </svg>
-        <div class="produto-info">
-          <h3>ThermoBlock™</h3>
-          <p><strong>Catalisador de Combustão Controlada</strong></p>
-          <p>Reduz o ΔH da combustão de 2800 kJ para 2400 kJ/mol usando compostos organometálicos.</p>
-          <p><small style="color: #38bdf8;">Disponível em breve • 500 ml</small></p>
-          <span class="preco">R$ 129,90 • 500 ml</span>
+      <div class="produto-info">
+        <h3 style="color: #38bdf8;">MareaCool™</h3>
+        <p style="font-size: 1.2rem;"><strong>Aditivo Endotérmico para Radiador</strong></p>
+        
+        <p>Aumenta a capacidade de absorção de calor do líquido de arrefecimento. 
+        Contém nitrato de amônio (NH₄NO₃) que se dissolve endotermicamente, 
+        absorvendo até <strong>+600 kJ extras</strong> do motor.</p>
+        
+        <div class="reacao-quimica">
+          <strong>🧪 Reação Endotérmica:</strong><br>
+          NH₄NO₃(s) + H₂O(l) → NH₄⁺(aq) + NO₃⁻(aq)<br>
+          <strong>ΔH = +25.7 kJ/mol</strong>
         </div>
+        
+        <p><small style="color: #38bdf8;">
+          Cada litro contém 2 mols de NH₄NO₃ → absorve até 51.4 kJ do motor.<br>
+          Use 2 litros = +102.8 kJ de calor removido!
+        </small></p>
+        
+        <span class="preco">R$ 89,90 • 1 Litro</span>
       </div>
+    </div>
+    
+    <div class="aviso">
+      <p>
+        <strong>⚡ Importante:</strong> O MareaCool™ age como um "aspirador de calor". 
+        Enquanto o radiador normal apenas troca calor com o ar, o MareaCool™ cria uma 
+        <strong>reação endotérmica controlada</strong> que absorve ativamente o excesso de energia térmica.
+      </p>
     </div>
   </div>
 </section>

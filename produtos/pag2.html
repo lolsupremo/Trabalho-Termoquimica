@@ -6,6 +6,39 @@
   <title>Produtos - ThermoBlock™</title>
   <link rel="stylesheet" href="../style.css">
   <style>
+    .produto-card {
+      border: 1px solid #fff;
+      border-radius: 24px;
+      padding: 24px;
+      margin: 20px 0;
+      background: rgba(255,255,255,.05);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    
+    .produto-svg {
+      width: 200px;
+      height: 250px;
+    }
+    
+    .produto-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    
+    .produto-info .preco {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+    
     .produto-demo {
       min-height: 350px;
       border: 1px solid #fff;
@@ -16,72 +49,31 @@
       margin: 24px 0;
     }
     
-    .pistao {
-      position: absolute;
-      width: 80px;
-      height: 120px;
-      background: #1a1a1a;
-      border: 2px solid #fff;
-      border-radius: 15px;
-      bottom: 40px;
-    }
-    
-    .pistao.p1 { left: 60px; animation: subirDescer 1.5s infinite; }
-    .pistao.p2 { left: 160px; animation: subirDescer 1.5s infinite 0.5s; }
-    .pistao.p3 { left: 260px; animation: subirDescer 1.5s infinite 1s; }
-    .pistao.p4 { left: 360px; animation: subirDescer 1.5s infinite 0.3s; }
-    
-    @keyframes subirDescer {
-      0%, 100% { height: 120px; }
-      50% { height: 80px; }
-    }
-    
-    .camada-protetora {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      right: 30px;
-      height: 60px;
-      border: 2px solid #38bdf8;
-      border-radius: 15px;
-      background: rgba(56,189,248,.15);
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-weight: 900;
-      animation: brilhar 2s infinite;
-    }
-    
-    @keyframes brilhar {
-      0%, 100% { box-shadow: 0 0 10px rgba(56,189,248,.3); }
-      50% { box-shadow: 0 0 30px rgba(56,189,248,.7); }
-    }
-    
-    .termometro-produto {
-      position: absolute;
-      right: 30px;
-      top: 100px;
-      width: 25px;
-      height: 180px;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      background: #000;
-    }
-    
-    .termometro-produto::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
+    .demo-svg {
       width: 100%;
-      height: 45%;
-      background: linear-gradient(to top, #38bdf8, #075985);
-      border-radius: 0 0 12px 12px;
-      animation: temperaturaControlada 3s infinite alternate;
+      height: 350px;
     }
     
-    @keyframes temperaturaControlada {
-      from { height: 30%; }
-      to { height: 55%; }
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .produto-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .produto-svg {
+        margin: 0 auto;
+        width: 150px;
+        height: 200px;
+      }
+      .grade {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -91,7 +83,7 @@
   <div class="topo">
       <a href="../index.html" class="logo-texto-marea">
       <img src="../imagens/logoLendaria.png" alt="Marea Tech" class="logo-img">
-      Marea Tech SOLUTIONS
+      Marea Tech SOLUTIONS 
     </a>
     <nav>
       <a href="../index.html">Início</a>
@@ -118,19 +110,59 @@
       O ThermoBlock™ é um catalisador que modifica a curva de energia da combustão.
     </p>
 
+    <!-- Demonstração visual -->
     <div class="produto-demo">
-      <div class="camada-protetora">🛡️ CAMADA PROTETORA THERMOBLOCK</div>
-      
-      <div class="pistao p1" style="bottom: 40px;"></div>
-      <div class="pistao p2" style="bottom: 40px;"></div>
-      <div class="pistao p3" style="bottom: 40px;"></div>
-      <div class="pistao p4" style="bottom: 40px;"></div>
-      
-      <div class="termometro-produto"></div>
-      
-      <div style="position: absolute; bottom: 10px; left: 10px; color: #fff; font-weight: 900; font-size: 0.9rem;">
-        Motor com ThermoBlock™
-      </div>
+      <svg class="demo-svg" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="motorGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a1a1a"/>
+            <stop offset="100%" stop-color="#0a0a0a"/>
+          </linearGradient>
+          <filter id="glowBlock">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <!-- Motor -->
+        <rect x="50" y="60" width="500" height="200" rx="20" fill="url(#motorGrad)" stroke="#fff" stroke-width="3"/>
+        
+        <!-- Pistões -->
+        <rect x="90" y="100" width="70" height="130" rx="8" fill="#1a1a1a" stroke="#fb923c" stroke-width="1.5"/>
+        <rect x="185" y="110" width="70" height="120" rx="8" fill="#1a1a1a" stroke="#fb923c" stroke-width="1.5"/>
+        <rect x="280" y="105" width="70" height="125" rx="8" fill="#1a1a1a" stroke="#fb923c" stroke-width="1.5"/>
+        <rect x="375" y="115" width="70" height="115" rx="8" fill="#1a1a1a" stroke="#fb923c" stroke-width="1.5"/>
+        
+        <!-- Camada protetora ThermoBlock -->
+        <rect x="70" y="80" width="460" height="35" rx="12" fill="#075985" stroke="#38bdf8" stroke-width="2.5" filter="url(#glowBlock)"/>
+        <text x="300" y="102" text-anchor="middle" fill="#fff" font-size="15" font-weight="900">🛡️ CAMADA PROTETORA THERMOBLOCK™</text>
+        
+        <!-- Chamas controladas (menores) -->
+        <circle cx="125" cy="160" r="12" fill="#fb923c" opacity="0.6">
+          <animate attributeName="r" values="12;18;12" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="220" cy="170" r="10" fill="#fb923c" opacity="0.5">
+          <animate attributeName="r" values="10;15;10" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="315" cy="165" r="11" fill="#fb923c" opacity="0.55">
+          <animate attributeName="r" values="11;17;11" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="410" cy="175" r="9" fill="#fb923c" opacity="0.5">
+          <animate attributeName="r" values="9;14;9" dur="2.2s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Termômetro -->
+        <rect x="560" y="60" width="15" height="200" rx="7" fill="#000" stroke="#fff" stroke-width="2"/>
+        <rect x="562" y="130" width="11" height="128" rx="5" fill="#38bdf8" opacity="0.8"/>
+        
+        <!-- Texto informativo -->
+        <text x="300" y="45" text-anchor="middle" fill="#fff" font-size="16" font-weight="900">MOTOR COM THERMOBLOCK™</text>
+        <text x="300" y="300" text-anchor="middle" fill="#38bdf8" font-size="14">ΔH reduzido: -2400 kJ/mol (antes -2800 kJ/mol)</text>
+        <text x="300" y="325" text-anchor="middle" fill="#d6d6d6" font-size="12">400 kJ DE CALOR ELIMINADOS!</text>
+      </svg>
     </div>
 
     <div class="grade">
@@ -151,15 +183,65 @@
       <p>
         <strong>Importante:</strong> O ThermoBlock™ <strong>não reduz a potência</strong> do motor. 
         Ele apenas torna a combustão mais eficiente, convertendo mais energia em trabalho mecânico 
-        e menos em calor dissipado.
+        e menos em calor dissipado. É como se o motor "aproveitasse melhor" a gasolina.
       </p>
     </div>
 
-    <div style="text-align: center; margin-top: 24px;">
-      <div class="produto-card" style="display: inline-block; text-align: left; max-width: 400px;">
+    <!-- Card do produto -->
+    <div class="produto-card">
+      <svg class="produto-svg" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="blockGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a1a1a"/>
+            <stop offset="100%" stop-color="#333"/>
+          </linearGradient>
+          <filter id="glowP">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <rect width="200" height="250" fill="#0a0a0a" rx="20"/>
+        
+        <!-- Bloco do motor -->
+        <rect x="30" y="40" width="140" height="150" rx="18" fill="url(#blockGrad)" stroke="#fff" stroke-width="3"/>
+        
+        <!-- Pistões -->
+        <rect x="45" y="60" width="30" height="100" rx="6" fill="#1a1a1a" stroke="#fb923c" stroke-width="1"/>
+        <rect x="85" y="55" width="30" height="105" rx="6" fill="#1a1a1a" stroke="#fb923c" stroke-width="1"/>
+        <rect x="125" y="65" width="30" height="95" rx="6" fill="#1a1a1a" stroke="#fb923c" stroke-width="1"/>
+        
+        <!-- Camada protetora -->
+        <rect x="40" y="45" width="120" height="20" rx="8" fill="#075985" stroke="#38bdf8" stroke-width="1.5" filter="url(#glowP)"/>
+        <text x="100" y="58" text-anchor="middle" fill="#fff" font-size="8" font-weight="900">THERMOBLOCK</text>
+        
+        <!-- Ícone de proteção -->
+        <text x="100" y="140" text-anchor="middle" fill="#38bdf8" font-size="50">🛡️</text>
+        
+        <text x="100" y="210" text-anchor="middle" fill="#fff" font-size="9" font-weight="900">CATALISADOR</text>
+        <text x="100" y="230" text-anchor="middle" fill="#38bdf8" font-size="8" font-weight="900">500 ML</text>
+      </svg>
+      
+      <div class="produto-info">
         <h3 style="color: #38bdf8;">ThermoBlock™</h3>
-        <p>Catalisador de Combustão Controlada</p>
-        <p><small>Composto organometálico à base de ferroceno</small></p>
+        <p style="font-size: 1.2rem;"><strong>Catalisador de Combustão Controlada</strong></p>
+        
+        <p>Composto organometálico à base de ferroceno que modifica a curva de energia da combustão. 
+        Reduz o ΔH liberado em aproximadamente <strong>400 kJ por mol de gasolina</strong>.</p>
+        
+        <div style="background: #000; border: 1px solid #38bdf8; border-radius: 14px; padding: 15px; margin: 15px 0;">
+          <strong>🔬 Mecanismo de ação:</strong><br>
+          <span style="color: #38bdf8;">
+          1. Inibe radicais livres na câmara<br>
+          2. Torna a combustão mais gradual<br>
+          3. Converte mais energia em trabalho<br>
+          4. Menos calor dissipado = motor mais frio
+          </span>
+        </div>
+        
         <span class="preco">R$ 129,90 • 500 ml</span>
       </div>
     </div>
