@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#050505"/>
+<defs><marker id="c" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#fb923c"/></marker></defs>
+<rect x="210" y="150" width="380" height="230" rx="55" fill="#111827" stroke="#fff" stroke-width="8"/>
+<path d="M250 195 H550" stroke="#fff" stroke-opacity=".35" stroke-width="5"/>
+<path d="M250 245 H550" stroke="#fff" stroke-opacity=".25" stroke-width="5"/>
+<path d="M250 295 H550" stroke="#fff" stroke-opacity=".25" stroke-width="5"/>
+<text x="400" y="280" fill="#bae6fd" font-size="54" font-family="Arial" text-anchor="middle" font-weight="bold">FRIA</text>
+<path d="M115 250 C180 250 190 250 210 250" stroke="#fb923c" stroke-width="12" fill="none" marker-end="url(#c)"/>
+<path d="M685 250 C620 250 610 250 590 250" stroke="#fb923c" stroke-width="12" fill="none" marker-end="url(#c)"/>
+<path d="M400 80 C400 120 400 130 400 150" stroke="#fb923c" stroke-width="12" fill="none" marker-end="url(#c)"/>
+<text x="400" y="445" fill="#fff" font-size="38" font-family="Arial" text-anchor="middle" font-weight="bold">BOLSA ABSORVE CALOR</text>
+</svg>

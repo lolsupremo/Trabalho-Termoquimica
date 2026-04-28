@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos - Gráfico do Marea</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="index.html" class="ativo">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Exemplos • página 2 de 3</span>
+    <h2>Visualizando o Desastre</h2>
+    
+    <p class="grande">
+      No gráfico abaixo, veja como a energia liberada pela combustão da gasolina 
+      <strong>supera a capacidade de absorção</strong> do sistema de arrefecimento.
+    </p>
+
+    <div class="grafico-box" style="margin-top:24px; border:1px solid #fff; border-radius:24px; background:#080808; padding:18px;">
+      <svg class="grafico-svg" viewBox="0 0 900 460" style="width:100%; height:auto;">
+        <defs>
+          <marker id="setaExo" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M 0 0 L 12 6 L 0 12 Z" fill="#fb923c"></path>
+          </marker>
+        </defs>
+        
+        <!-- Eixos -->
+        <line x1="80" y1="350" x2="80" y2="80" stroke="#fff" stroke-width="3" marker-end="url(#setaExo)"></line>
+        <line x1="80" y1="350" x2="830" y2="350" stroke="#fff" stroke-width="3" marker-end="url(#setaExo)"></line>
+        
+        <text x="22" y="95" transform="rotate(-90 22 95)" fill="#fff" font-size="14" font-weight="900">Energia (kJ)</text>
+        <text x="650" y="440" fill="#fff" font-size="14" font-weight="900">Caminho da reação</text>
+        
+        <!-- Níveis de energia -->
+        <line x1="145" y1="130" x2="765" y2="130" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="8 8"></line>
+        <line x1="145" y1="270" x2="765" y2="270" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="8 8"></line>
+        <line x1="145" y1="200" x2="765" y2="200" stroke="#fb923c" stroke-width="2" stroke-dasharray="8 8"></line>
+        
+        <!-- Curva de combustão -->
+        <path d="M 145 130 L 300 130 C 360 130, 370 80, 455 80 C 545 80, 540 270, 610 270 L 765 270" stroke="#fff" stroke-width="6" fill="none"></path>
+        
+        <!-- Seta do ΔH -->
+        <line x1="805" y1="130" x2="805" y2="270" stroke="#fb923c" stroke-width="5" marker-end="url(#setaExo)"></line>
+        
+        <!-- Rótulos -->
+        <text x="120" y="120" fill="#fff" font-size="16" font-weight="900">Gasolina + O₂ (Reagentes)</text>
+        <text x="120" y="290" fill="#fff" font-size="16" font-weight="900">CO₂ + H₂O (Produtos)</text>
+        <text x="700" y="190" fill="#fb923c" font-size="20" font-weight="900">ΔH = -2800 kJ</text>
+        
+        <!-- Linha do limite do radiador -->
+        <line x1="145" y1="200" x2="145" y2="200" stroke="#38bdf8" stroke-width="8"></line>
+        <text x="30" y="200" fill="#38bdf8" font-size="14" font-weight="900">Limite do Radiador</text>
+        <text x="30" y="220" fill="#38bdf8" font-size="12">(2200 kJ)</text>
+        
+        <!-- Área de perigo -->
+        <rect x="145" y="130" width="620" height="70" fill="#fb923c" opacity="0.15" stroke="#fb923c" stroke-width="1" stroke-dasharray="5 5"></rect>
+        <text x="400" y="165" fill="#fb923c" font-size="14" font-weight="900" text-anchor="middle">⚠️ ZONA DE SUPERAQUE CIMENTO</text>
+      </svg>
+    </div>
+
+    <div class="grade">
+      <div class="card">
+        <h3>🔴 O Problema</h3>
+        <p>A gasolina (reagente) tem energia alta. Os produtos (CO₂ e água) têm energia baixa. 
+        A diferença (ΔH negativo) é o calor liberado, que ultrapassa a capacidade do radiador.</p>
+      </div>
+      <div class="card">
+        <h3>🔵 A Solução Ideal</h3>
+        <p>Para resolver termoquimicamente, precisamos ou <strong>diminuir o ΔH da combustão</strong> 
+        ou <strong>aumentar a capacidade endotérmica</strong> do sistema de arrefecimento.</p>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <p>
+        <strong>Curiosidade:</strong> O Marea foi projetado na Itália com radiador pequeno para o clima europeu. 
+        No Brasil, com temperaturas mais altas, o sistema não consegue absorver o calor extra do ambiente, 
+        piorando ainda mais o desequilíbrio termoquímico.
+      </p>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<div class="aula-nav">
+  <a class="botao secundario" href="index.html">← Voltar</a>
+  <a class="botao" href="pag3.html">Próximo →</a>
+</div>
+
+  <footer>Termoquímica em páginas separadas • Estudo, demonstração e interação</footer>
+  <script src="../script.js"></script>
+</body>
+</html>

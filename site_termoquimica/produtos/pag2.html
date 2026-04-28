@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - ThermoBlock™</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .produto-demo {
+      min-height: 350px;
+      border: 1px solid #fff;
+      border-radius: 24px;
+      background: #080808;
+      position: relative;
+      overflow: hidden;
+      margin: 24px 0;
+    }
+    
+    .pistao {
+      position: absolute;
+      width: 80px;
+      height: 120px;
+      background: #1a1a1a;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      bottom: 40px;
+    }
+    
+    .pistao.p1 { left: 60px; animation: subirDescer 1.5s infinite; }
+    .pistao.p2 { left: 160px; animation: subirDescer 1.5s infinite 0.5s; }
+    .pistao.p3 { left: 260px; animation: subirDescer 1.5s infinite 1s; }
+    .pistao.p4 { left: 360px; animation: subirDescer 1.5s infinite 0.3s; }
+    
+    @keyframes subirDescer {
+      0%, 100% { height: 120px; }
+      50% { height: 80px; }
+    }
+    
+    .camada-protetora {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      right: 30px;
+      height: 60px;
+      border: 2px solid #38bdf8;
+      border-radius: 15px;
+      background: rgba(56,189,248,.15);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      animation: brilhar 2s infinite;
+    }
+    
+    @keyframes brilhar {
+      0%, 100% { box-shadow: 0 0 10px rgba(56,189,248,.3); }
+      50% { box-shadow: 0 0 30px rgba(56,189,248,.7); }
+    }
+    
+    .termometro-produto {
+      position: absolute;
+      right: 30px;
+      top: 100px;
+      width: 25px;
+      height: 180px;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      background: #000;
+    }
+    
+    .termometro-produto::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 45%;
+      background: linear-gradient(to top, #38bdf8, #075985);
+      border-radius: 0 0 12px 12px;
+      animation: temperaturaControlada 3s infinite alternate;
+    }
+    
+    @keyframes temperaturaControlada {
+      from { height: 30%; }
+      to { height: 55%; }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="index.html" class="ativo">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Produtos • página 2 de 3</span>
+    <h2>ThermoBlock™</h2>
+    
+    <p class="grande">
+      Se não podemos aumentar a dissipação de calor, que tal <strong>reduzir o calor gerado</strong>?
+      O ThermoBlock™ é um catalisador que modifica a curva de energia da combustão.
+    </p>
+
+    <div class="produto-demo">
+      <div class="camada-protetora">🛡️ CAMADA PROTETORA THERMOBLOCK</div>
+      
+      <div class="pistao p1" style="bottom: 40px;"></div>
+      <div class="pistao p2" style="bottom: 40px;"></div>
+      <div class="pistao p3" style="bottom: 40px;"></div>
+      <div class="pistao p4" style="bottom: 40px;"></div>
+      
+      <div class="termometro-produto"></div>
+      
+      <div style="position: absolute; bottom: 10px; left: 10px; color: #fff; font-weight: 900; font-size: 0.9rem;">
+        Motor com ThermoBlock™
+      </div>
+    </div>
+
+    <div class="grade">
+      <div class="card">
+        <h3>🧪 Como funciona?</h3>
+        <p>Adicionado ao combustível, o ThermoBlock™ atua como <strong>inibidor de radical livre</strong>, 
+        reduzindo a energia liberada na combustão de 2800 kJ para aproximadamente <strong>2400 kJ/mol</strong>.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Resultado Termoquímico</h3>
+        <p>ΔH original: -2800 kJ/mol<br>
+        ΔH com ThermoBlock™: -2400 kJ/mol<br>
+        <strong>Redução de 400 kJ liberados!</strong></p>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <p>
+        <strong>Importante:</strong> O ThermoBlock™ <strong>não reduz a potência</strong> do motor. 
+        Ele apenas torna a combustão mais eficiente, convertendo mais energia em trabalho mecânico 
+        e menos em calor dissipado.
+      </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <div class="produto-card" style="display: inline-block; text-align: left; max-width: 400px;">
+        <h3 style="color: #38bdf8;">ThermoBlock™</h3>
+        <p>Catalisador de Combustão Controlada</p>
+        <p><small>Composto organometálico à base de ferroceno</small></p>
+        <span class="preco">R$ 129,90 • 500 ml</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<div class="aula-nav">
+  <a class="botao secundario" href="index.html">← Voltar</a>
+  <a class="botao" href="pag3.html">Próximo →</a>
+</div>
+
+  <footer>Termoquímica em páginas separadas • Estudo, demonstração e interação</footer>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos - O Caso do Fiat Marea</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .marea-lab {
+      min-height: 420px;
+      border: 1px solid #fff;
+      border-radius: 24px;
+      background: #070707;
+      position: relative;
+      overflow: hidden;
+      margin-top: 26px;
+    }
+    
+    .motor-bloco {
+      position: absolute;
+      width: 200px;
+      height: 140px;
+      background: #1a1a1a;
+      border: 3px solid #fff;
+      border-radius: 20px;
+      left: calc(50% - 100px);
+      top: calc(50% - 70px);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 0 30px rgba(251,146,60,.3);
+      animation: tremerMotor 0.5s infinite alternate ease-in-out;
+    }
+    
+    @keyframes tremerMotor {
+      from { transform: translateX(-2px); }
+      to { transform: translateX(2px); }
+    }
+    
+    .chama {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #fb923c;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: pulsarChama 1s infinite alternate;
+    }
+    
+    .c1 { left: 15%; top: 15%; animation-delay: 0s; }
+    .c2 { right: 15%; top: 20%; animation-delay: 0.2s; }
+    .c3 { left: 20%; bottom: 20%; animation-delay: 0.4s; }
+    .c4 { right: 20%; bottom: 15%; animation-delay: 0.6s; }
+    .c5 { left: 45%; top: 8%; animation-delay: 0.8s; }
+    
+    @keyframes pulsarChama {
+      from { transform: scale(0.8); opacity: 0.5; }
+      to { transform: scale(1.3); opacity: 1; }
+    }
+    
+    .radiador {
+      position: absolute;
+      bottom: 20px;
+      left: calc(50% - 120px);
+      width: 240px;
+      height: 40px;
+      border: 2px solid #38bdf8;
+      border-radius: 10px;
+      background: rgba(56,189,248,.15);
+      display: grid;
+      place-items: center;
+      color: #38bdf8;
+      font-weight: 900;
+      font-size: 0.8rem;
+      animation: piscarRadiador 2s infinite;
+    }
+    
+    @keyframes piscarRadiador {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    
+    .comparacao-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+    
+    @media (max-width: 768px) {
+      .comparacao-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .marea-logo-svg {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="index.html" class="ativo">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Exemplos • página 1 de 3</span>
+    <h2>O Caso Termoquímico do Marea</h2>
+    
+    <!-- SVG do Marea incorporado -->
+    <svg class="marea-logo-svg" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="carGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff0000"/>
+          <stop offset="100%" stop-color="#8b0000"/>
+        </linearGradient>
+      </defs>
+      <!-- Corpo do carro -->
+      <rect x="40" y="60" width="220" height="50" rx="10" fill="url(#carGrad)" stroke="#fff" stroke-width="2"/>
+      <!-- Teto -->
+      <rect x="80" y="30" width="100" height="35" rx="8" fill="url(#carGrad)" stroke="#fff" stroke-width="2"/>
+      <!-- Janelas -->
+      <rect x="85" y="35" width="40" height="25" rx="4" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
+      <rect x="130" y="35" width="40" height="25" rx="4" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
+      <!-- Rodas -->
+      <circle cx="80" cy="115" r="15" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+      <circle cx="80" cy="115" r="8" fill="#333" stroke="#fff" stroke-width="1"/>
+      <circle cx="220" cy="115" r="15" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+      <circle cx="220" cy="115" r="8" fill="#333" stroke="#fff" stroke-width="1"/>
+      <!-- Faróis -->
+      <rect x="255" y="70" width="10" height="15" rx="3" fill="#fb923c" stroke="#fff" stroke-width="1"/>
+      <rect x="255" y="90" width="10" height="10" rx="3" fill="#ff0000" stroke="#fff" stroke-width="1"/>
+      <!-- Fumaça -->
+      <circle cx="35" cy="55" r="8" fill="#999" opacity="0.5">
+        <animate attributeName="cy" values="55;30" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="25" cy="60" r="6" fill="#999" opacity="0.4">
+        <animate attributeName="cy" values="60;25" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Texto Marea -->
+      <text x="150" y="148" text-anchor="middle" fill="#fff" font-size="12" font-weight="900">FIAT MAREA 2007</text>
+    </svg>
+    
+    <p class="grande">
+      O <strong>Fiat Marea 2007</strong> ficou famoso por um problema crônico de <strong>superaquecimento</strong>. 
+      Mas você sabia que a termoquímica explica exatamente o que acontece no motor desse carro?
+    </p>
+
+    <div class="grade3">
+      <div class="card card-destaque">
+        <h3>🔥 Combustão Exotérmica</h3>
+        <p>A gasolina queima no motor liberando MUITO calor. ΔH é extremamente negativo.</p>
+      </div>
+      <div class="card">
+        <h3>❄️ Arrefecimento Endotérmico</h3>
+        <p>O radiador tenta absorver calor (processo endotérmico), mas não dá conta da quantidade liberada.</p>
+      </div>
+      <div class="card">
+        <h3>⚖️ Desequilíbrio Térmico</h3>
+        <p>Quando o calor liberado > calor absorvido, o motor superaquece e pode fundir.</p>
+      </div>
+    </div>
+
+    <div class="marea-lab">
+      <span style="position:absolute; top:18px; left:22px; color:#d6d6d6; font-weight:900; text-transform:uppercase;">Motor em funcionamento</span>
+      
+      <div class="motor-bloco">
+        <span style="color:#fff; font-size:0.9rem;">MOTOR<br>MAREA</span>
+      </div>
+      
+      <span class="chama c1"></span>
+      <span class="chama c2"></span>
+      <span class="chama c3"></span>
+      <span class="chama c4"></span>
+      <span class="chama c5"></span>
+      
+      <div class="radiador">RADIADOR SOBRECARREGADO</div>
+      
+      <span style="position:absolute; right:20px; top:20px; border:1px solid rgba(255,255,255,.7); background:#000; color:#fed7aa; border-radius:999px; padding:8px 12px; font-weight:900; font-size:.86rem;">ΔH = -2800 kJ/mol</span>
+    </div>
+
+    <div class="aviso">
+      <p>
+        <strong>Traduzindo:</strong> A reação de combustão no motor do Marea libera aproximadamente 
+        <strong>2800 kJ de energia por mol de gasolina</strong>. O sistema de arrefecimento foi projetado 
+        para dissipar cerca de 2200 kJ. Resultado: <strong>600 kJ de calor acumulado</strong> que danifica o motor.
+      </p>
+    </div>
+
+    <div class="comparacao-grid">
+      <div class="card">
+        <h3>🚗 Carro Normal</h3>
+        <p><strong>Calor liberado:</strong> 2500 kJ<br>
+        <strong>Calor dissipado:</strong> 2500 kJ<br>
+        <strong>Resultado:</strong> Equilíbrio térmico ✅</p>
+      </div>
+      <div class="card">
+        <h3>🚗 Fiat Marea 2007</h3>
+        <p><strong>Calor liberado:</strong> 2800 kJ<br>
+        <strong>Calor dissipado:</strong> 2200 kJ<br>
+        <strong>Resultado:</strong> Superaquecimento ❌</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<div class="aula-nav">
+  <a class="botao secundario" href="../graficos/pag3.html">← Voltar</a>
+  <a class="botao" href="pag2.html">Próximo →</a>
+</div>
+
+  <footer>Termoquímica em páginas separadas • Estudo, demonstração e interação</footer>
+  <script src="../script.js"></script>
+</body>
+</html>

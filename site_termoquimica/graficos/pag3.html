@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráficos - Interativo</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="topo">
+      <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+      <nav>
+        <a href="../index.html" class="">Início</a>
+        <a href="../conceito/index.html" class="">Conceito</a>
+        <a href="../entalpia/index.html" class="">Entalpia</a>
+        <a href="../delta-h/index.html" class="">ΔH</a>
+        <a href="../exotermica/index.html" class="">Exotérmica</a>
+        <a href="../endotermica/index.html" class="">Endotérmica</a>
+        <a href="../graficos/index.html" class="ativo">Gráficos</a>
+        <a href="../exemplos/index.html" class="">Exemplos</a>
+        <a href="../produtos/index.html">Produtos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="tela">
+      <div class="conteudo">
+        <span class="etiqueta">Gráficos • página 3 de 3</span>
+        <h2>Laboratório do gráfico</h2>
+        <p>
+          Agora sim: mexa nos valores. Repare como a curva se adapta e como o sinal do ΔH muda.
+        </p>
+
+        <div class="botoes">
+          <label>H<sub>r</sub>: <input id="canvasHr" type="range" min="0" max="130" value="90"
+              oninput="desenharCanvas()"></label>
+          <label>H<sub>p</sub>: <input id="canvasHp" type="range" min="0" max="130" value="35"
+              oninput="desenharCanvas()"></label>
+          <label>E<sub>a</sub>: <input id="canvasEa" type="range" min="10" max="90" value="45"
+              oninput="desenharCanvas()"></label>
+        </div>
+
+        <canvas id="canvasGrafico"></canvas>
+        <div id="canvasResultado" class="saida"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="aula-nav">
+    <a class="botao secundario" href="pag2.html">← Voltar</a>
+    <a class="botao" href="../exemplos/index.html">Próximo →</a>
+  </div>
+
+  <footer>Termoquímica em páginas separadas • Estudo, demonstração e interação</footer>
+  <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exotérmica - Interativo</title>
+  <link rel="stylesheet" href="exotermica.css">
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="index.html" class="ativo">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Exotérmica • página 3 de 3</span>
+    <h2>Agora mexa no gráfico</h2>
+
+    <p class="grande">
+      Ajuste as energias. Para continuar sendo exotérmica, os produtos precisam ficar
+      <strong>abaixo dos reagentes</strong>.
+    </p>
+
+    <div class="painel-controles">
+      <div class="controles">
+        <div class="controle">
+          <label>Energia dos reagentes: <span id="valorHr">105 kJ</span></label>
+          <input id="exoHr" type="range" min="40" max="130" value="105" oninput="atualizarGraficoExo()">
+        </div>
+
+        <div class="controle">
+          <label>Energia dos produtos: <span id="valorHp">35 kJ</span></label>
+          <input id="exoHp" type="range" min="10" max="120" value="35" oninput="atualizarGraficoExo()">
+        </div>
+      </div>
+
+      <div class="botoes">
+        <button onclick="exemploExotermico()">Exemplo bem exotérmico</button>
+        <button class="secundario" onclick="exemploFraco()">Exemplo com pouca liberação</button>
+      </div>
+
+      
+
+<div class="grafico-box">
+  <svg class="grafico-svg" viewBox="0 0 900 460" aria-label="Gráfico interativo de reação exotérmica">
+    <defs>
+      <marker id="setaBaixo" markerWidth="12" markerHeight="12" refX="6" refY="10" orient="auto">
+        <path d="M 0 0 L 12 0 L 6 12 Z" fill="#38bdf8"></path>
+      </marker>
+      <marker id="setaEixo" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+        <path d="M 0 0 L 12 6 L 0 12 Z" fill="#fff"></path>
+      </marker>
+    </defs>
+
+    <!-- Caixas fixas dos textos: não atravessam a curva -->
+    <rect class="caixa-texto-svg" x="115" y="18" width="235" height="45" rx="12"></rect>
+    <text id="textoR" class="texto-pequeno-svg" x="130" y="47">Reagentes</text>
+
+    <rect class="caixa-texto-svg" x="535" y="365" width="235" height="45" rx="12"></rect>
+    <text id="textoP" class="texto-pequeno-svg" x="550" y="394">Produtos</text>
+
+    <rect class="caixa-texto-svg azul" x="690" y="185" width="140" height="45" rx="12"></rect>
+    <text id="textoDH" class="texto-medio-svg texto-azul" x="708" y="215">ΔH</text>
+
+    <line class="eixo" x1="80" y1="350" x2="80" y2="80" marker-end="url(#setaEixo)"></line>
+    <line class="eixo" x1="80" y1="350" x2="830" y2="350" marker-end="url(#setaEixo)"></line>
+    <text x="22" y="95" transform="rotate(-90 22 95)">Energia</text>
+    <text x="650" y="440">Caminho da reação</text>
+
+    <line id="guiaR" class="linha-guia" x1="145" y1="130" x2="765" y2="130"></line>
+    <line id="guiaP" class="linha-guia" x1="145" y1="270" x2="765" y2="270"></line>
+
+    <line id="linhaR" class="linha-nivel" x1="145" y1="130" x2="300" y2="130"></line>
+    <line id="linhaP" class="linha-nivel" x1="610" y1="270" x2="765" y2="270"></line>
+
+    <path id="curvaExo" class="curva-reacao" d=""></path>
+
+    <line id="setaDH" class="seta-dh-svg" x1="805" y1="130" x2="805" y2="270" marker-end="url(#setaBaixo)"></line>
+  </svg>
+</div>
+
+
+      <div class="resultado-exo">
+        <div id="badgeExo" class="badge-exo">Exotérmica</div>
+        <div id="saidaExo" class="saida"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <div class="aula-nav">
+    <a class="botao secundario" href="pag2.html">← Voltar</a>
+    <a class="botao" href="../endotermica/index.html">Próximo →</a>
+  </div>
+  <footer>Reação exotérmica • Calor saindo do sistema • ΔH negativo</footer>
+  <script src="exotermica.js"></script>
+</body>
+</html>

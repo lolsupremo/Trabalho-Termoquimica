@@ -1,0 +1,29 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coolGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fundo escuro -->
+  <rect width="400" height="300" fill="#0a0a0a" rx="20"/>
+  
+  <!-- Garrafa de aditivo -->
+  <rect x="140" y="60" width="120" height="200" rx="20" fill="url(#coolGrad)" stroke="#fff" stroke-width="3"/>
+  <rect x="160" y="20" width="80" height="50" rx="10" fill="#bae6fd" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Rótulo -->
+  <rect x="150" y="100" width="100" height="60" rx="10" fill="#000" stroke="#38bdf8" stroke-width="1"/>
+  <text x="200" y="125" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="900">MAREA</text>
+  <text x="200" y="145" text-anchor="middle" fill="#fff" font-size="12" font-weight="900">COOL™</text>
+  
+  <!-- Flocos de neve -->
+  <text x="120" y="120" fill="#bae6fd" font-size="20" opacity="0.8">❄</text>
+  <text x="270" y="150" fill="#bae6fd" font-size="16" opacity="0.6">❄</text>
+  <text x="130" y="200" fill="#bae6fd" font-size="14" opacity="0.7">❄</text>
+  
+  <!-- Ondas de frio -->
+  <path d="M 100 160 Q 115 150 130 160 Q 145 170 160 160" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5"/>
+  <path d="M 240 170 Q 255 160 270 170 Q 285 180 300 170" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5"/>
+</svg>

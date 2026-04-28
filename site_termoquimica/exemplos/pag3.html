@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos - Simulador do Marea</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .simulador-marea {
+      background: #0a0a0a;
+      border: 1px solid #fff;
+      border-radius: 24px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+    
+    .motor-visual {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      background: #111;
+      position: relative;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    
+    .barra-termica {
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 40px;
+      background: linear-gradient(90deg, #38bdf8, #fb923c, #ff0000);
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+    
+    .termometro {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      height: 200px;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      background: #000;
+      overflow: hidden;
+    }
+    
+    .mercurio {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, #38bdf8, #fb923c, #ff0000);
+      transition: height 0.5s;
+    }
+    
+    .status-marea {
+      text-align: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      padding: 16px;
+      border-radius: 16px;
+      margin-top: 16px;
+    }
+    
+    .status-normal { background: rgba(56,189,248,.2); color: #38bdf8; }
+    .status-alerta { background: rgba(251,146,60,.2); color: #fb923c; }
+    .status-perigo { background: rgba(255,0,0,.2); color: #ff0000; animation: piscarAlerta 1s infinite; }
+    
+    @keyframes piscarAlerta {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+    
+    .controles-simulador {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="index.html" class="ativo">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Exemplos • página 3 de 3</span>
+    <h2>Simulador do Marea</h2>
+    
+    <p class="grande">
+      Ajuste os parâmetros e veja quando o motor do Marea entra em <strong>colapso térmico</strong>.
+      Quando a barra fica vermelha, o motor está superaquecendo!
+    </p>
+
+    <div class="simulador-marea">
+      <div class="controles-simulador">
+        <div class="controle">
+          <label>Combustível (ΔH liberado): <span id="valorCombustivel">2800 kJ</span></label>
+          <input id="combustivel" type="range" min="1500" max="3500" value="2800" oninput="atualizarMarea()">
+        </div>
+        
+        <div class="controle">
+          <label>Eficiência do Radiador: <span id="valorRadiador">2200 kJ</span></label>
+          <input id="radiador" type="range" min="1000" max="3500" value="2200" oninput="atualizarMarea()">
+        </div>
+        
+        <div class="controle">
+          <label>Temperatura Ambiente: <span id="valorTemp">30°C</span></label>
+          <input id="tempAmbiente" type="range" min="15" max="45" value="30" oninput="atualizarMarea()">
+        </div>
+      </div>
+
+      <div class="motor-visual">
+        <div class="termometro">
+          <div id="mercurio" class="mercurio" style="height: 40%;"></div>
+        </div>
+        
+        <div id="barraTermica" class="barra-termica" style="height: 40px;"></div>
+        
+        <div style="position: absolute; left: 20px; top: 20px; color: #fff; font-weight: 900;">
+          <div>⚙️ Motor Marea 2.4</div>
+          <div id="rpmInfo" style="font-size: 0.9rem; color: var(--suave);">3500 RPM</div>
+        </div>
+      </div>
+
+      <div id="statusMarea" class="status-marea status-normal">
+        ✅ Motor operando em temperatura normal
+      </div>
+
+      <div id="saidaMarea" class="saida">
+        <strong>Balanço Térmico:</strong><br>
+        Calor liberado: 2800 kJ | Calor dissipado: 2200 kJ<br>
+        <strong>Saldo: +600 kJ (ACUMULANDO CALOR!)</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<div class="aula-nav">
+  <a class="botao secundario" href="pag2.html">← Voltar</a>
+  <a class="botao" href="../produtos/index.html">Próximo →</a>
+</div>
+
+  <footer>Termoquímica em páginas separadas • Estudo, demonstração e interação</footer>
+  
+  <script>
+    function atualizarMarea() {
+      var combustivel = Number(pegar('combustivel')?.value || 2800);
+      var radiador = Number(pegar('radiador')?.value || 2200);
+      var tempAmb = Number(pegar('tempAmbiente')?.value || 30);
+      
+      // Atualiza labels
+      escrever('valorCombustivel', combustivel + ' kJ');
+      escrever('valorRadiador', radiador + ' kJ');
+      escrever('valorTemp', tempAmb + '°C');
+      
+      var saldo = combustivel - radiador;
+      var tempMotor = 90 + (saldo / 100) + (tempAmb - 25) * 0.5;
+      
+      // Atualiza barra térmica
+      var barra = pegar('barraTermica');
+      var alturaBarra = Math.min(100, (saldo / 30) + 20);
+      if (barra) barra.style.height = alturaBarra + 'px';
+      
+      // Atualiza termômetro
+      var mercurio = pegar('mercurio');
+      var alturaMercurio = Math.min(100, Math.max(10, tempMotor / 2));
+      if (mercurio) mercurio.style.height = alturaMercurio + '%';
+      
+      // Atualiza RPM
+      var rpm = 2500 + (combustivel / 10);
+      escrever('rpmInfo', Math.round(rpm) + ' RPM');
+      
+      // Atualiza status
+      var status = pegar('statusMarea');
+      if (saldo > 500) {
+        status.className = 'status-marea status-perigo';
+        status.innerHTML = '🔴 PERIGO! Motor superaquecendo! Risco de fusão!';
+      } else if (saldo > 200) {
+        status.className = 'status-marea status-alerta';
+        status.innerHTML = '⚠️ ATENÇÃO! Temperatura elevada. Reduza a rotação!';
+      } else {
+        status.className = 'status-marea status-normal';
+        status.innerHTML = '✅ Motor operando em temperatura normal';
+      }
+      
+      // Atualiza saída
+      var texto = '<strong>Balanço Térmico:</strong><br>';
+      texto += 'Calor liberado: ' + combustivel + ' kJ | Calor dissipado: ' + radiador + ' kJ<br>';
+      texto += '<strong>Saldo: ' + (saldo > 0 ? '+' : '') + saldo + ' kJ</strong><br>';
+      texto += 'Temperatura estimada do motor: <strong>' + Math.round(tempMotor) + '°C</strong>';
+      
+      if (saldo > 500) {
+        texto += '<br><br>🔴 <strong>COLAPSO TÉRMICO IMINENTE!</strong>';
+      }
+      
+      escrever('saidaMarea', texto);
+    }
+    
+    function pegar(id) { return document.getElementById(id); }
+    function escrever(id, texto) { var el = pegar(id); if (el) el.innerHTML = texto; }
+  </script>
+</body>
+</html>

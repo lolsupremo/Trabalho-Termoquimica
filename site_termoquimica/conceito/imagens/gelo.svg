@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#050505"/>
+<defs>
+<linearGradient id="ice" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0" stop-color="#e0f2fe"/>
+<stop offset="0.5" stop-color="#7dd3fc"/>
+<stop offset="1" stop-color="#0f172a"/>
+</linearGradient>
+<marker id="arrOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+<path d="M0,0 L0,12 L12,6 z" fill="#fb923c"/>
+</marker>
+</defs>
+<rect x="230" y="145" width="145" height="145" rx="20" fill="url(#ice)" stroke="#fff" stroke-width="7"/>
+<rect x="365" y="175" width="145" height="145" rx="20" fill="url(#ice)" stroke="#fff" stroke-width="7" opacity=".92"/>
+<path d="M252 175 L350 260" stroke="#fff" stroke-width="4" opacity=".35"/>
+<path d="M395 205 L488 290" stroke="#fff" stroke-width="4" opacity=".35"/>
+<ellipse cx="400" cy="350" rx="250" ry="28" fill="#111" stroke="#fff" stroke-opacity=".7"/>
+<path d="M120 160 C180 165 190 215 230 220" stroke="#fb923c" stroke-width="13" fill="none" marker-end="url(#arrOrange)"/>
+<path d="M680 160 C620 165 605 215 510 220" stroke="#fb923c" stroke-width="13" fill="none" marker-end="url(#arrOrange)"/>
+<path d="M400 55 C400 95 400 115 400 145" stroke="#fb923c" stroke-width="13" fill="none" marker-end="url(#arrOrange)"/>
+<path d="M400 430 C400 400 400 370 400 325" stroke="#fb923c" stroke-width="13" fill="none" marker-end="url(#arrOrange)"/>
+<circle cx="120" cy="160" r="15" fill="#fed7aa"/>
+<circle cx="680" cy="160" r="15" fill="#fed7aa"/>
+<circle cx="400" cy="55" r="15" fill="#fed7aa"/>
+<circle cx="400" cy="430" r="15" fill="#fed7aa"/>
+<text x="400" y="470" fill="#fff" font-size="38" font-family="Arial" text-anchor="middle" font-weight="bold">CALOR ENTRA NO GELO</text>
+</svg>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceito - Exemplos</title>
+  <link rel="stylesheet" href="conceito.css">
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="index.html" class="ativo">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Conceito • página 3 de 3</span>
+    <h2>Exemplos do dia a dia</h2>
+    <p class="grande">
+      Clique em uma imagem para ver quem é o <strong>sistema</strong>,
+      quem é o <strong>ambiente</strong> e se o <strong>calor entra ou sai</strong>.
+    </p>
+
+    <div class="exemplos-grid">
+      <div id="cardGelo" class="exemplo-card" onclick="mostrarExemplo('gelo')">
+        <img src="imagens/gelo.svg" alt="Gelo derretendo">
+        <div class="texto">
+          <h3>Gelo derretendo</h3>
+          <p>Calor entra no gelo.</p>
+        </div>
+      </div>
+
+      <div id="cardVela" class="exemplo-card" onclick="mostrarExemplo('vela')">
+        <img src="imagens/vela.svg" alt="Vela queimando">
+        <div class="texto">
+          <h3>Vela queimando</h3>
+          <p>Calor sai da chama.</p>
+        </div>
+      </div>
+
+      <div id="cardBolsa" class="exemplo-card" onclick="mostrarExemplo('bolsa')">
+        <img src="imagens/bolsa.svg" alt="Bolsa térmica fria">
+        <div class="texto">
+          <h3>Bolsa fria</h3>
+          <p>Calor entra na bolsa.</p>
+        </div>
+      </div>
+
+      <div id="cardMadeira" class="exemplo-card" onclick="mostrarExemplo('madeira')">
+        <img src="imagens/madeira.svg" alt="Madeira queimando">
+        <div class="texto">
+          <h3>Madeira queimando</h3>
+          <p>Calor sai do fogo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detalhe-exemplo">
+      <div class="foto-grande">
+        <img id="fotoExemplo" src="imagens/gelo.svg" alt="Imagem do exemplo selecionado">
+      </div>
+
+      <div id="textoExemplo" class="explicacao-exemplo"></div>
+    </div>
+
+    <div class="mini-resumo">
+      <div class="card">
+        <strong>Endotérmico</strong>
+        <p>O sistema recebe calor. O calor entra. No site, aparece em laranja.</p>
+      </div>
+      <div class="card">
+        <strong>Exotérmico</strong>
+        <p>O sistema libera calor. O calor sai. No site, aparece em azul.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <div class="aula-nav">
+    <a class="botao secundario" href="pag2.html">← Voltar</a>
+    <a class="botao" href="../entalpia/index.html">Próximo →</a>
+  </div>
+  <footer>Conceito de Termoquímica • Sistema, ambiente, calor e energia térmica</footer>
+  <script src="conceito.js"></script>
+</body>
+</html>

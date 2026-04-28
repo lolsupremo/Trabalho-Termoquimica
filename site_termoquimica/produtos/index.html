@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Marea Tech Solutions</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .logo-marea {
+      text-align: center;
+      padding: 40px 20px;
+      margin: 20px 0;
+      border: 2px solid #fff;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #1a0000, #0a0a0a);
+    }
+    
+    .logo-carro {
+      font-size: clamp(3rem, 8vw, 6rem);
+      margin: 20px 0;
+    }
+    
+    .logo-texto {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    
+    .logo-slogan {
+      color: #fb923c;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    
+    .produto-card {
+      border: 1px solid #fff;
+      border-radius: 24px;
+      padding: 24px;
+      margin: 20px 0;
+      background: rgba(255,255,255,.05);
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    
+    .produto-svg {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .produto-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .produto-info .preco {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      margin-top: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .produto-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .produto-svg {
+        margin: 0 auto;
+      }
+    }
+    
+    .grade-produtos {
+      display: grid;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    
+    .logo-svg {
+      width: 200px;
+      height: 150px;
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="index.html" class="ativo">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Produtos • página 1 de 3</span>
+    
+    <div class="logo-marea">
+      <!-- SVG do carro Marea para logo -->
+      <svg class="logo-svg" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ff0000"/>
+            <stop offset="100%" stop-color="#8b0000"/>
+          </linearGradient>
+        </defs>
+        <!-- Carro estilizado -->
+        <rect x="20" y="60" width="160" height="40" rx="8" fill="url(#logoGrad)" stroke="#fff" stroke-width="2"/>
+        <rect x="55" y="35" width="70" height="30" rx="6" fill="url(#logoGrad)" stroke="#fff" stroke-width="2"/>
+        <!-- Janelas -->
+        <rect x="60" y="40" width="25" height="20" rx="3" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
+        <rect x="90" y="40" width="25" height="20" rx="3" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
+        <!-- Rodas -->
+        <circle cx="55" cy="105" r="12" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+        <circle cx="145" cy="105" r="12" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+        <!-- Chamas -->
+        <text x="100" y="145" text-anchor="middle" fill="#fb923c" font-size="20">🔥</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;2,2;0,0" dur="3s" repeatCount="indefinite"/>
+      </svg>
+      
+      <div class="logo-texto">Marea Tech</div>
+      <div style="font-size: 1.5rem; color: #fff; font-weight: 900;">SOLUTIONS</div>
+      <div class="logo-slogan">"Do problema térmico, nasceu a solução química"</div>
+      <div style="margin-top: 20px; color: #d6d6d6; font-size: 0.9rem;">
+        Fundada em 2008 • Especialistas em Termoquímica Automotiva • Mais de 50.000 Mareas salvos
+      </div>
+    </div>
+
+    <h2>Nossos Produtos</h2>
+    
+    <p class="grande">
+      Depois de entender a termoquímica por trás do superaquecimento do Marea, 
+      desenvolvemos <strong>três soluções químicas</strong> que atacam o problema em diferentes frentes.
+    </p>
+
+    <div class="grade-produtos">
+      <!-- PRODUTO 1: MareaCool -->
+      <div class="produto-card">
+        <svg class="produto-svg" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="coolGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#38bdf8"/>
+              <stop offset="100%" stop-color="#075985"/>
+            </linearGradient>
+          </defs>
+          <rect width="150" height="150" fill="#0a0a0a" rx="15"/>
+          <rect x="45" y="30" width="60" height="100" rx="10" fill="url(#coolGrad)" stroke="#fff" stroke-width="2"/>
+          <rect x="55" y="10" width="40" height="25" rx="5" fill="#bae6fd" stroke="#fff" stroke-width="1"/>
+          <text x="75" y="80" text-anchor="middle" fill="#fff" font-size="30">❄️</text>
+          <text x="30" y="60" fill="#bae6fd" font-size="12">❄</text>
+          <text x="115" y="90" fill="#bae6fd" font-size="10">❄</text>
+        </svg>
+        <div class="produto-info">
+          <h3>MareaCool™</h3>
+          <p><strong>Aditivo Endotérmico para Radiador</strong></p>
+          <p>Aumenta a capacidade de absorção de calor do líquido de arrefecimento. 
+          Contém nitrato de amônio (NH₄NO₃) que se dissolve endotermicamente, 
+          absorvendo até <strong>+600 kJ extras</strong> do motor.</p>
+          <p><small style="color: #38bdf8;">Reação: NH₄NO₃(s) → NH₄⁺(aq) + NO₃⁻(aq) — ΔH = +25.7 kJ/mol</small></p>
+          <span class="preco">R$ 89,90 • 1 Litro</span>
+        </div>
+      </div>
+      
+      <!-- PRODUTO 2: ThermoBlock -->
+      <div class="produto-card">
+        <svg class="produto-svg" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <rect width="150" height="150" fill="#0a0a0a" rx="15"/>
+          <rect x="25" y="25" width="100" height="100" rx="15" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+          <rect x="30" y="30" width="90" height="20" rx="8" fill="#075985" stroke="#38bdf8" stroke-width="1" filter="url(#glow)"/>
+          <text x="75" y="43" text-anchor="middle" fill="#fff" font-size="8" font-weight="900">THERMOBLOCK</text>
+          <text x="75" y="95" text-anchor="middle" fill="#38bdf8" font-size="40">🛡️</text>
+        </svg>
+        <div class="produto-info">
+          <h3>ThermoBlock™</h3>
+          <p><strong>Catalisador de Combustão Controlada</strong></p>
+          <p>Reduz o ΔH da combustão de 2800 kJ para 2400 kJ/mol usando compostos organometálicos.</p>
+          <p><small style="color: #38bdf8;">Disponível em breve • 500 ml</small></p>
+          <span class="preco">R$ 129,90 • 500 ml</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<div class="aula-nav">
+  <a class="botao secundario" href="../exemplos/pag3.html">← Voltar</a>
+  <a class="botao" href="pag2.html">Próximo →</a>
+</div>
+
+  <footer>Termoquímica em páginas separadas • Estudo, demonstração e interação</footer>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceito - Calor entrando e saindo</title>
+  <link rel="stylesheet" href="conceito.css">
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="index.html" class="ativo">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Conceito • página 2 de 3</span>
+    <h2>Calor: entra ou sai?</h2>
+    <p>
+      Agora olhe para a bolinha. Ela é o <strong>sistema</strong>.
+      Quando as setas apontam para a bolinha, o sistema está recebendo calor.
+      Quando as setas apontam para fora, o sistema está liberando calor.
+    </p>
+
+    <div class="botoes">
+      <button onclick="modoCalor('entrando')">🔥 Calor entrando no sistema</button>
+      <button class="secundario" onclick="modoCalor('saindo')">❄️ Calor saindo do sistema</button>
+    </div>
+
+    <div id="laboratorioCalor" class="laboratorio entrando">
+      <span class="rotulo-ambiente">Ambiente: tudo ao redor</span>
+      <span id="rotuloCaso" class="rotulo-caso">Endotérmico</span>
+
+      <div class="bola-sistema">Sistema<br>químico</div>
+
+      <div class="seta esquerda"></div>
+      <div class="seta direita"></div>
+      <div class="seta cima"></div>
+      <div class="seta baixo"></div>
+
+      <span class="ponto-calor p1"></span>
+      <span class="ponto-calor p2"></span>
+      <span class="ponto-calor p3"></span>
+      <span class="ponto-calor p4"></span>
+      <span class="ponto-calor p5"></span>
+      <span class="ponto-calor p6"></span>
+    </div>
+
+    <div class="legenda-cores">
+      <div class="legenda">
+        <span class="quadrado laranja"></span>
+        <strong>Laranja:</strong> o calor entra no sistema. Termo científico: <strong>endotérmico</strong>.
+      </div>
+      <div class="legenda">
+        <span class="quadrado azul"></span>
+        <strong>Azul:</strong> o calor sai do sistema. Termo científico: <strong>exotérmico</strong>.
+      </div>
+    </div>
+
+    <div class="explicacao-grande">
+      <div id="explicacaoCalor" class="saida"></div>
+      <div id="fraseCurta" class="saida"></div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <div class="aula-nav">
+    <a class="botao secundario" href="index.html">← Voltar</a>
+    <a class="botao" href="pag3.html">Próximo →</a>
+  </div>
+  <footer>Conceito de Termoquímica • Sistema, ambiente, calor e energia térmica</footer>
+  <script src="conceito.js"></script>
+</body>
+</html>

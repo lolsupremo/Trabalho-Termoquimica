@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - HeatShield Pro™</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .comparativo {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    
+    .produto-resumo {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--linha);
+      border-radius: 20px;
+      padding: 20px;
+    }
+    
+    .produto-resumo.destaque {
+      border-color: #fff;
+      background: rgba(255,255,255,.11);
+      transform: scale(1.05);
+    }
+    
+    .preco-final {
+      text-align: center;
+      margin: 30px 0;
+      padding: 30px;
+      border: 2px solid #fb923c;
+      border-radius: 24px;
+      background: rgba(251,146,60,.1);
+    }
+    
+    .preco-final h2 {
+      color: #fb923c;
+      margin-bottom: 15px;
+    }
+    
+    .preco-final .valor {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+    }
+    
+    @media (max-width: 768px) {
+      .comparativo {
+        grid-template-columns: 1fr;
+      }
+      .produto-resumo.destaque {
+        transform: none;
+      }
+    }
+    
+    .shield-demo {
+      min-height: 300px;
+      border: 1px solid #fff;
+      border-radius: 24px;
+      background: #080808;
+      position: relative;
+      overflow: hidden;
+      margin: 24px 0;
+    }
+    
+    .radiador-shield {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 150px;
+      border: 3px solid #38bdf8;
+      border-radius: 20px;
+      background: rgba(7,89,133,.3);
+    }
+    
+    .onda-calor {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      animation: dispersar 2s infinite;
+    }
+    
+    .onda1 { left: 20%; top: 20%; background: rgba(251,146,60,.3); animation-delay: 0s; }
+    .onda2 { right: 20%; top: 20%; background: rgba(251,146,60,.3); animation-delay: 0.5s; }
+    .onda3 { left: 20%; bottom: 20%; background: rgba(251,146,60,.3); animation-delay: 1s; }
+    .onda4 { right: 20%; bottom: 20%; background: rgba(251,146,60,.3); animation-delay: 1.5s; }
+    
+    @keyframes dispersar {
+      from { transform: scale(0.5); opacity: 0.8; }
+      to { transform: scale(2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="index.html" class="ativo">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Produtos • página 3 de 3</span>
+    <h2>HeatShield Pro™ + Kit Completo</h2>
+    
+    <p class="grande">
+      A terceira frente de ataque: <strong>melhorar a transferência de calor</strong> para o ambiente.
+      O HeatShield Pro™ é um revestimento que aumenta a eficiência do radiador.
+    </p>
+
+    <div class="shield-demo">
+      <div class="radiador-shield">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; font-weight: 900;">
+          🛡️<br>HEATSHIELD<br>PRO
+        </div>
+      </div>
+      
+      <span class="onda-calor onda1"></span>
+      <span class="onda-calor onda2"></span>
+      <span class="onda-calor onda3"></span>
+      <span class="onda-calor onda4"></span>
+    </div>
+
+    <div class="grade">
+      <div class="card">
+        <h3>🔬 Tecnologia</h3>
+        <p>Nanopartículas de óxido de alumínio (Al₂O₃) que aumentam a condutividade térmica 
+        do radiador em <strong>40%</strong>. Aplicação em spray sobre as aletas do radiador.</p>
+      </div>
+      <div class="card">
+        <h3>📈 Resultado</h3>
+        <p>Capacidade de dissipação original: 2200 kJ<br>
+        Com HeatShield Pro™: <strong>~3100 kJ</strong><br>
+        Finalmente o radiador dá conta do calor gerado!</p>
+      </div>
+    </div>
+
+    <div class="preco-final">
+      <h2>🔥 Kit Completo Marea Tech™</h2>
+      <p>Leve os três produtos com desconto e resolva o problema de vez!</p>
+      <div class="valor">R$ 297,70</div>
+      <p style="color: var(--suave);">ou 3x de R$ 99,23 sem juros</p>
+      
+      <div style="margin-top: 20px; padding: 20px; background: rgba(0,0,0,.5); border-radius: 16px;">
+        <strong>📦 O Kit inclui:</strong><br>
+        ✅ 1L MareaCool™ (Aditivo Endotérmico)<br>
+        ✅ 500ml ThermoBlock™ (Catalisador)<br>
+        ✅ 1 Spray HeatShield Pro™ (Revestimento Térmico)<br>
+        ✅ Manual Técnico com explicações termoquímicas<br>
+        ✅ Adesivo exclusivo Marea Tech™
+      </div>
+    </div>
+
+    <div class="comparativo">
+      <div class="produto-resumo">
+        <h3>❄️ MareaCool™</h3>
+        <p>Absorve +600 kJ</p>
+        <span class="preco">R$ 89,90</span>
+      </div>
+      <div class="produto-resumo destaque">
+        <h3>🔥 Kit Completo</h3>
+        <p>Economia de R$ 52,00</p>
+        <span class="preco" style="background: #fb923c; color: #000; padding: 8px 16px; border-radius: 999px; font-size: 1.3rem;">R$ 297,70</span>
+      </div>
+      <div class="produto-resumo">
+        <h3>🛡️ HeatShield</h3>
+        <p>Dissipa +900 kJ</p>
+        <span class="preco">R$ 129,90</span>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <p>
+        <strong>Garantia Marea Tech™:</strong> Se o seu Marea ainda superaquecer após usar nosso kit completo, 
+        devolvemos seu dinheiro! (Spoiler: nunca precisamos devolver 😉)
+      </p>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+<div class="aula-nav">
+  <a class="botao secundario" href="pag2.html">← Voltar</a>
+  <a class="botao" href="../index.html">Voltar ao Início →</a>
+</div>
+
+  <footer>Marea Tech Solutions™ • "Do problema térmico, nasceu a solução química"</footer>
+  <script src="../script.js"></script>
+</body>
+</html>

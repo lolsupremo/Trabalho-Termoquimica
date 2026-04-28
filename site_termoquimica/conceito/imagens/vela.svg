@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+<rect width="800" height="500" fill="#050505"/>
+<defs><marker id="b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/></marker></defs>
+<rect x="345" y="245" width="110" height="160" rx="18" fill="#e5e7eb" stroke="#fff" stroke-width="7"/>
+<path d="M400 120 C330 205 383 245 400 245 C420 245 477 205 400 120Z" fill="#fb923c" stroke="#fff" stroke-width="6"/>
+<path d="M400 165 C375 205 392 224 400 224 C410 224 430 205 400 165Z" fill="#fed7aa"/>
+<path d="M330 190 C230 170 190 120 135 80" stroke="#38bdf8" stroke-width="12" fill="none" marker-end="url(#b)"/>
+<path d="M470 190 C570 170 610 120 665 80" stroke="#38bdf8" stroke-width="12" fill="none" marker-end="url(#b)"/>
+<path d="M400 110 C400 60 400 50 400 25" stroke="#38bdf8" stroke-width="12" fill="none" marker-end="url(#b)"/>
+<text x="400" y="455" fill="#fff" font-size="42" font-family="Arial" text-anchor="middle" font-weight="bold">VELA LIBERA CALOR</text>
+</svg>

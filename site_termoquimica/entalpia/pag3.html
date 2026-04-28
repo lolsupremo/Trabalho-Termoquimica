@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entalpia - Interativo</title>
+  <link rel="stylesheet" href="entalpia.css">
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="index.html" class="ativo">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Entalpia • página 3 de 3</span>
+    <h2>Produtos − Reagentes</h2>
+
+    <p class="grande">
+      Agora o desenho segue a própria conta: <strong>produtos menos reagentes igual resultado</strong>.
+      O resultado aparece no sistema e mostra se o calor entra ou sai.
+    </p>
+
+    <div class="painel-interativo">
+      <div class="controles">
+        <div class="controle">
+          <label>H dos produtos: <span id="valorHpControle">40 kJ</span></label>
+          <input id="hp" type="range" min="0" max="120" value="40" oninput="atualizarEntalpia()">
+        </div>
+
+        <div class="controle">
+          <label>H dos reagentes: <span id="valorHrControle">90 kJ</span></label>
+          <input id="hr" type="range" min="0" max="120" value="90" oninput="atualizarEntalpia()">
+        </div>
+      </div>
+
+      <div class="botoes">
+        <button onclick="exemploRapido('exo')">Exotérmico</button>
+        <button class="secundario" onclick="exemploRapido('endo')">Endotérmico</button>
+        <button class="secundario" onclick="exemploRapido('zero')">Igualar</button>
+      </div>
+
+      <div class="calculo-visual">
+        <div class="bloco-barra">
+          <div id="valorHpBarra" class="valor-barra">40 kJ</div>
+          <div id="barraProdutos" class="barra"></div>
+          <div class="barra-label">Produtos<br>H<sub>p</sub></div>
+        </div>
+
+        <div class="operador">−</div>
+
+        <div class="bloco-barra">
+          <div id="valorHrBarra" class="valor-barra">90 kJ</div>
+          <div id="barraReagentes" class="barra"></div>
+          <div class="barra-label">Reagentes<br>H<sub>r</sub></div>
+        </div>
+
+        <div class="operador">=</div>
+
+        <div class="resultado-box">
+          <div id="valorResultado" class="resultado-numero">ΔH = -50 kJ</div>
+
+          <div id="sistemaResultado" class="sistema-resultado exo">
+            <div class="setinha s1"></div>
+            <div class="setinha s2"></div>
+            Sistema<br>químico
+          </div>
+
+          <div id="tipoFinal" class="tipo-final exo">Exotérmica</div>
+        </div>
+      </div>
+
+      <div id="equacaoAtual" class="equacao-linha"></div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <div class="aula-nav">
+    <a class="botao secundario" href="pag2.html">← Voltar</a>
+    <a class="botao" href="../exotermica/index.html">Próximo →</a>
+  </div>
+  <footer>Entalpia • Energia do sistema • Reagentes, produtos e ΔH</footer>
+  <script src="entalpia.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Endotérmica - Interativo</title><link rel="stylesheet" href="endotermica.css"></head><body>
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo"><span>ΔH</span> Termoquímica</a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="../entalpia/index.html">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="index.html" class="ativo">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="tela"><div class="conteudo"><span class="etiqueta">Endotérmica • página 3 de 3</span><h2>Agora mexa no gráfico</h2><p class="grande">Ajuste as energias. Para continuar sendo endotérmica, os produtos precisam ficar <strong>acima dos reagentes</strong>.</p><div class="painel-controles"><div class="controles"><div class="controle"><label>Energia dos reagentes: <span id="valorHr">35 kJ</span></label><input id="endoHr" type="range" min="10" max="120" value="35" oninput="atualizarGraficoEndo()"></div><div class="controle"><label>Energia dos produtos: <span id="valorHp">105 kJ</span></label><input id="endoHp" type="range" min="40" max="130" value="105" oninput="atualizarGraficoEndo()"></div></div><div class="botoes"><button onclick="exemploEndotermico()">Exemplo bem endotérmico</button><button class="secundario" onclick="exemploFraco()">Exemplo com pouca absorção</button></div>
+<div class="grafico-box">
+  <svg class="grafico-svg" viewBox="0 0 900 460" aria-label="Gráfico interativo de reação endotérmica">
+    <defs>
+      <marker id="setaLaranja" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M 0 0 L 12 6 L 0 12 Z" fill="#fb923c"></path></marker>
+      <marker id="setaEixo" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M 0 0 L 12 6 L 0 12 Z" fill="#fff"></path></marker>
+    </defs>
+    <rect class="caixa-texto-svg" x="115" y="365" width="235" height="45" rx="12"></rect><text id="textoR" class="texto-pequeno-svg" x="130" y="394">Reagentes</text>
+    <rect class="caixa-texto-svg" x="535" y="18" width="235" height="45" rx="12"></rect><text id="textoP" class="texto-pequeno-svg" x="550" y="47">Produtos</text>
+    <rect class="caixa-texto-svg laranja" x="685" y="185" width="150" height="45" rx="12"></rect><text id="textoDH" class="texto-medio-svg texto-laranja" x="700" y="215">ΔH</text>
+    <line class="eixo" x1="80" y1="350" x2="80" y2="80" marker-end="url(#setaEixo)"></line><line class="eixo" x1="80" y1="350" x2="830" y2="350" marker-end="url(#setaEixo)"></line>
+    <text x="22" y="95" transform="rotate(-90 22 95)">Energia</text><text x="650" y="440">Caminho da reação</text>
+    <line id="guiaR" class="linha-guia" x1="145" y1="270" x2="765" y2="270"></line><line id="guiaP" class="linha-guia" x1="145" y1="130" x2="765" y2="130"></line>
+    <line id="linhaR" class="linha-nivel" x1="145" y1="270" x2="300" y2="270"></line><line id="linhaP" class="linha-nivel" x1="610" y1="130" x2="765" y2="130"></line>
+    <path id="curvaEndo" class="curva-reacao" d=""></path>
+    <line id="setaDH" class="seta-dh-svg" x1="805" y1="270" x2="805" y2="130" marker-end="url(#setaLaranja)"></line>
+  </svg>
+</div><div class="resultado-endo"><div id="badgeEndo" class="badge-endo">Endotérmica</div><div id="saidaEndo" class="saida"></div></div></div></div></section>
+</main><div class="aula-nav"><a class="botao secundario" href="pag2.html">← Voltar</a><a class="botao" href="../graficos/index.html">Próximo →</a></div><footer>Reação endotérmica • Calor entrando no sistema • ΔH positivo</footer><script src="endotermica.js"></script></body></html>
