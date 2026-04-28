@@ -18,3 +18,6 @@
 Pode haver bugs ou erros, por favor, me avise para que eu possa corrigir e me mandem o arquivo o mais breve possível.
 
 #### Para abaixar acesse a página principal do repositório no navegador e clicar no botão verde Code (ou Código).  No menu que se abre, selecione a opção Download ZIP. O arquivo compactado será baixado para o seu dispositivo; após o download, basta extrair o conteúdo para acessar todos os arquivos do projeto.
+
+## Link para o projeto (caso não queiram baixar): 
+https://lolsupremo.github.io/Trabalho-Termoquimica/index.html
