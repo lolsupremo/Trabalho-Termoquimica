@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entalpia - Tipos</title>
+  <link rel="stylesheet" href="entalpia.css">
+  <style>
+    .tipo-entalpia-card {
+      border: 1px solid var(--linha);
+      background: var(--card);
+      border-radius: 22px;
+      padding: 24px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 20px;
+      align-items: start;
+      transition: .2s;
+    }
+    
+    .tipo-entalpia-card:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,.11);
+    }
+    
+    .tipo-icone {
+      width: 70px;
+      height: 70px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      background: #000;
+    }
+    
+    .tipo-conteudo h3 {
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+    
+    .tipo-conteudo .formula-pequena {
+      display: inline-block;
+      background: #000;
+      border: 1px solid #fff;
+      border-radius: 12px;
+      padding: 8px 14px;
+      margin: 8px 0;
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+    
+    .tipo-conteudo .delta {
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-top: 8px;
+    }
+    
+    .delta.positivo { color: var(--laranja-claro); }
+    .delta.negativo { color: var(--azul-claro); }
+    
+    .tabela-tipos {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    
+    .tabela-tipos th,
+    .tabela-tipos td {
+      border: 1px solid var(--linha);
+      padding: 14px;
+      text-align: left;
+      color: var(--suave);
+    }
+    
+    .tabela-tipos th {
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: .86rem;
+      font-weight: 900;
+    }
+    
+    .tabela-tipos td strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    
+    .dica-final {
+      border-left: 4px solid var(--laranja-claro);
+      background: rgba(251,146,60,.1);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 22px;
+    }
+    
+    @media (max-width: 768px) {
+      .tipo-entalpia-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .tipo-icone {
+        margin: 0 auto;
+      }
+      
+      .tabela-tipos {
+        font-size: .85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+<header>
+  <div class="topo">
+    <a href="../index.html" class="logo-texto-marea">
+      <img src="../imagens/logoLendaria.png" alt="Marea Tech" class="logo-img">
+      Marea Tech SOLUTIONS
+    </a>
+    <nav>
+      <a href="../index.html">Início</a>
+      <a href="../conceito/index.html">Conceito</a>
+      <a href="index.html" class="ativo">Entalpia</a>
+      <a href="../exotermica/index.html">Exotérmica</a>
+      <a href="../endotermica/index.html">Endotérmica</a>
+      <a href="../graficos/index.html">Gráficos</a>
+      <a href="../exemplos/index.html">Exemplos</a>
+      <a href="../produtos/index.html">Produtos</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    
+<section class="tela">
+  <div class="conteudo">
+    <span class="etiqueta">Entalpia • Tipos de ΔH</span>
+    <h2>Tipos de Entalpia</h2>
+
+    <p class="grande">
+      Nem toda entalpia é igual! Existem <strong>vários tipos</strong>, cada um medindo uma situação diferente.
+      O que muda é <strong>qual transformação</strong> está sendo analisada.
+    </p>
+
+    <!-- TIPO 1: Formação -->
+    <div class="tipo-entalpia-card">
+      <div class="tipo-icone">🏗️</div>
+      <div class="tipo-conteudo">
+        <h3>Entalpia de Formação (ΔH°f)</h3>
+        <p>Energia envolvida quando <strong>1 mol</strong> de uma substância é formada a partir de <strong>substâncias simples</strong> no estado padrão.</p>
+        <div class="formula-pequena">H₂(g) + ½O₂(g) → H₂O(l)</div>
+        <div class="delta negativo">ΔH°f = -285,8 kJ/mol</div>
+        <p style="margin-top: 8px; font-size: .9rem;">📌 <strong>Regra:</strong> Substâncias simples no estado padrão têm ΔH°f = 0 por definição.</p>
+      </div>
+    </div>
+
+    <!-- TIPO 2: Combustão -->
+    <div class="tipo-entalpia-card">
+      <div class="tipo-icone">🔥</div>
+      <div class="tipo-conteudo">
+        <h3>Entalpia de Combustão (ΔH°c)</h3>
+        <p>Energia liberada na <strong>queima completa</strong> de 1 mol de uma substância com O₂. <strong>Sempre exotérmica!</strong></p>
+        <div class="formula-pequena">CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)</div>
+        <div class="delta negativo">ΔH°c = -890 kJ/mol</div>
+        <p style="margin-top: 8px; font-size: .9rem;">📌 É por isso que combustíveis liberam calor: a combustão é altamente exotérmica.</p>
+      </div>
+    </div>
+
+    <!-- TIPO 3: Ligação -->
+    <div class="tipo-entalpia-card">
+      <div class="tipo-icone">🔗</div>
+      <div class="tipo-conteudo">
+        <h3>Entalpia de Ligação</h3>
+        <p>Energia necessária para <strong>quebrar 1 mol de ligações</strong> entre átomos no estado gasoso.</p>
+        <div class="formula-pequena">H-H(g) → 2H(g)</div>
+        <div class="delta positivo">ΔHligação = +436 kJ/mol</div>
+        <p style="margin-top: 8px; font-size: .9rem;">📌 <strong>Quebrar ligação = sempre endotérmico!</strong> Formar ligação = sempre exotérmico.</p>
+      </div>
+    </div>
+
+    <!-- TIPO 4: Dissolução -->
+    <div class="tipo-entalpia-card">
+      <div class="tipo-icone">💧</div>
+      <div class="tipo-conteudo">
+        <h3>Entalpia de Dissolução</h3>
+        <p>Energia envolvida quando <strong>1 mol de soluto</strong> se dissolve em solvente suficiente para formar uma solução diluída.</p>
+        <div class="formula-pequena">NH₄NO₃(s) + H₂O → NH₄⁺(aq) + NO₃⁻(aq)</div>
+        <div class="delta positivo">ΔHdissolução = +25,7 kJ/mol</div>
+        <p style="margin-top: 8px; font-size: .9rem;">📌 Pode ser <strong>endotérmica</strong> (ex: bolsa fria) ou <strong>exotérmica</strong> (ex: NaOH em água).</p>
+      </div>
+    </div>
+
+    <!-- TIPO 5: Neutralização -->
+    <div class="tipo-entalpia-card">
+      <div class="tipo-icone">⚗️</div>
+      <div class="tipo-conteudo">
+        <h3>Entalpia de Neutralização</h3>
+        <p>Energia liberada quando <strong>1 mol de H⁺</strong> reage com <strong>1 mol de OH⁻</strong> formando água.</p>
+        <div class="formula-pequena">HCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l)</div>
+        <div class="delta negativo">ΔHneutralização = -57,3 kJ/mol</div>
+        <p style="margin-top: 8px; font-size: .9rem;">📌 Ácido forte + base forte sempre libera aproximadamente <strong>-57 kJ/mol</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Tabela resumo -->
+    <h3 style="margin-top: 30px;">📊 Tabela Resumo</h3>
+    <table class="tabela-tipos">
+      <tr>
+        <th>Tipo</th>
+        <th>O que mede?</th>
+        <th>Sinal típico</th>
+        <th>Exemplo</th>
+      </tr>
+      <tr>
+        <td><strong>Formação</strong></td>
+        <td>Formar 1 mol de composto</td>
+        <td style="color: var(--azul-claro);">Geralmente negativo</td>
+        <td>Formação da água</td>
+      </tr>
+      <tr>
+        <td><strong>Combustão</strong></td>
+        <td>Queimar 1 mol completamente</td>
+        <td style="color: var(--azul-claro);">Sempre negativo</td>
+        <td>Queima do metano</td>
+      </tr>
+      <tr>
+        <td><strong>Ligação</strong></td>
+        <td>Quebrar ligações (gasoso)</td>
+        <td style="color: var(--laranja-claro);">Sempre positivo</td>
+        <td>Quebra do H₂</td>
+      </tr>
+      <tr>
+        <td><strong>Dissolução</strong></td>
+        <td>Dissolver 1 mol de soluto</td>
+        <td>Positivo ou negativo</td>
+        <td>Nitrato de amônio</td>
+      </tr>
+      <tr>
+        <td><strong>Neutralização</strong></td>
+        <td>Ácido + base → água</td>
+        <td style="color: var(--azul-claro);">Geralmente negativo</td>
+        <td>HCl + NaOH</td>
+      </tr>
+    </table>
+
+    <div class="dica-final">
+      <p>
+        <strong>🧠 Macete do Marea:</strong> Pense assim...<br>
+        🏗️ <strong>Formação:</strong> "Construir" uma molécula<br>
+        🔥 <strong>Combustão:</strong> "Destruir" queimando<br>
+        🔗 <strong>Ligação:</strong> "Arrebentar" as conexões<br>
+        💧 <strong>Dissolução:</strong> "Misturar" na água<br>
+        ⚗️ <strong>Neutralização:</strong> Ácido + base = água + sal
+      </p>
+    </div>
+
+    <div class="aviso" style="margin-top: 20px;">
+      <p>
+        <strong>💡 Importante:</strong> No ENEM e vestibulares, o mais cobrado é a <strong>entalpia de formação</strong> 
+        e a <strong>entalpia de combustão</strong>. Saber o sinal do ΔH e identificar o tipo pela equação já resolve 
+        a maioria das questões!
+      </p>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
+  <div class="aula-nav">
+    <a class="botao secundario" href="pag3.html">← Voltar</a>
+    <a class="botao" href="../exotermica/index.html">Próximo →</a>
+  </div>
+  
+  <footer>Entalpia • Energia do sistema • Tipos de entalpia e suas aplicações</footer>
+  <script src="entalpia.js"></script>
+</body>
+</html>
