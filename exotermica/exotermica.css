@@ -573,3 +573,23 @@ footer {
 .texto-medio-svg {
   font-size: 21px;
 }
+
+/* Logo personalizada no cabeçalho */
+.logo-img {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.logo-texto-marea {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
